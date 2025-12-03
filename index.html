@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>SwapPoint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SwapPoint</h1>
+        <p class="subtitle">Tauschen statt Kaufen</p>
+    </header>
+
+    <main>
+        <button class="primary" onclick="openForm()">+ Neues Angebot</button>
+
+        <div id="list" class="offer-list"></div>
+    </main>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <h2>Neues Angebot</h2>
+
+            <input id="title" placeholder="Titel">
+            <textarea id="description" placeholder="Beschreibung"></textarea>
+            <input id="wish" placeholder="Dein Tauschwunsch">
+
+            <label>Bild auswählen:</label>
+            <input type="file" id="imageInput" accept="image/*">
+
+            <div class="modal-buttons">
+                <button class="primary" onclick="addOffer()">Speichern</button>
+                <button class="secondary" onclick="closeForm()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

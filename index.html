@@ -2,42 +2,61 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>SwapPoint</title>
+    <title>SwapPoint – Tauschbörse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>SwapPoint</h1>
-        <p class="subtitle">Tauschen statt Kaufen</p>
-    </header>
+<header class="topbar">
+    <h1>SwapPoint</h1>
+</header>
 
-    <main>
-        <button class="primary" onclick="openForm()">+ Neues Angebot</button>
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Suche nach Angeboten..." oninput="render()">
+</div>
 
-        <div id="list" class="offer-list"></div>
-    </main>
+<div class="categories">
+    <button onclick="filterCategory('Alle')">Alle</button>
+    <button onclick="filterCategory('Elektronik')">Elektronik</button>
+    <button onclick="filterCategory('Kleidung')">Kleidung</button>
+    <button onclick="filterCategory('Spiele')">Spiele</button>
+    <button onclick="filterCategory('Sonstiges')">Sonstiges</button>
+</div>
 
-    <div id="formModal" class="modal">
-        <div class="modal-content">
-            <h2>Neues Angebot</h2>
+<main class="offer-container">
+    <button class="add-button" onclick="openForm()">+ Neues Angebot</button>
+    <div id="list"></div>
+</main>
 
-            <input id="title" placeholder="Titel">
-            <textarea id="description" placeholder="Beschreibung"></textarea>
-            <input id="wish" placeholder="Dein Tauschwunsch">
+<!-- FORMULAR -->
+<div id="formModal" class="modal">
+    <div class="modal-content">
+        <h2>Angebot erstellen</h2>
 
-            <label>Bild auswählen:</label>
-            <input type="file" id="imageInput" accept="image/*">
+        <input id="title" placeholder="Titel">
+        <textarea id="description" placeholder="Beschreibung"></textarea>
+        <input id="wish" placeholder="Tauschwunsch">
 
-            <div class="modal-buttons">
-                <button class="primary" onclick="addOffer()">Speichern</button>
-                <button class="secondary" onclick="closeForm()">Abbrechen</button>
-            </div>
+        <label>Kategorie:</label>
+        <select id="category">
+            <option value="Elektronik">Elektronik</option>
+            <option value="Kleidung">Kleidung</option>
+            <option value="Spiele">Spiele</option>
+            <option value="Sonstiges">Sonstiges</option>
+        </select>
+
+        <label>Bild auswählen:</label>
+        <input type="file" id="imageInput" accept="image/*">
+
+        <div class="modal-buttons">
+            <button class="primary" onclick="addOffer()">Speichern</button>
+            <button class="secondary" onclick="closeForm()">Abbrechen</button>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

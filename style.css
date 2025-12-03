@@ -1,70 +1,128 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f1f5fb;
+    background: #f3f3f3;
     margin: 0;
 }
 
-header {
-    background: #2a72ff;
-    padding: 25px;
-    text-align: center;
+.topbar {
+    background: #23a455;
     color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 22px;
 }
 
-.subtitle {
-    margin-top: -10px;
-    opacity: 0.9;
+.search-bar {
+    padding: 10px;
+    background: white;
 }
 
-main {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 20px;
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.primary, .secondary {
-    padding: 12px 16px;
-    border-radius: 8px;
+.categories {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    padding: 10px;
+    gap: 10px;
+}
+
+.categories button {
+    padding: 8px 14px;
     border: none;
+    background: #ddd;
+    border-radius: 20px;
     cursor: pointer;
 }
 
-.primary {
-    background: #2a72ff;
+.offer-container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.add-button {
+    padding: 12px 20px;
+    background: #23a455;
     color: white;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.secondary {
-    background: #ddd;
+#list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-.offer-list > div {
+.card {
     background: white;
-    padding: 15px;
-    margin-bottom: 12px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px #0001;
+    box-shadow: 0 2px 8px #0002;
+    overflow: hidden;
 }
 
-.offer-list img {
+.card img {
     width: 100%;
-    max-height: 180px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-top: 10px;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card-category {
+    font-size: 13px;
+    opacity: 0.6;
 }
 
 .modal {
+    display: none;
     position: fixed;
     inset: 0;
-    display: none;
-    background-color: #0005;
+    background: #0006;
 }
 
 .modal-content {
     background: white;
     padding: 20px;
-    max-width: 400px;
+    max-width: 380px;
     margin: 80px auto;
     border-radius: 12px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.primary {
+    background: #23a455;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.secondary {
+    background: #ccc;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
 }
